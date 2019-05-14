@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue.js</title>
+	<meta charset="utf-8" />
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div id="app">
+	<header class="header">
+
+	
+	
+	
+	</header>
+	<section class="container">
+		<section class="container__content">
+		
+		<div> <label for="name">Digite um nome: </label> <input id="1" type="text"> </div>
+
+		<button type="button" @click="add()"> Adicionar</button>
+		
+		
+			
+			
+		
+		</section>
+		<aside class="container__sidebar">
+			
+			<ul>
+				<li v-for="nomes in name">{{nomes}}</li>
+			</ul>
+
+
+			<span> Total de nomes:  <strong v-html="name.length">  </strong> </span>
+		
+		</aside>
+		</section>
+		
+		</div>
+	
+	
+	<script src="script.js"></script>
+	
+	
+</body>
+</html>

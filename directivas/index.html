@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue.js</title>
+	<meta charset="utf-8" />
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div id="app">
+	<header class="header">
+	
+	<select  v-model="selectA">
+			<option v-for="option in options()" v-bind:value="option.value">{{option.text}}</option>
+			</select>
+			</br></br>
+		</select>
+	
+	
+	
+	</header>
+	<section class="container">
+		<section class="container__content">
+		
+		
+		
+		
+			<form v-if="selectA">  
+					Teste1</br>
+				<input type="text" name="Teste"/></br></br>
+					
+					Teste2</br>
+				<input type="text" name="Teste"/>
+			
+			</form>
+			
+			
+			<form v-else="selectA">
+					Data1</br>
+				<input type="date" name="Teste"/></br></br>
+					
+					Data2</br>
+				<input type="date" name="Teste"/>
+				
+			</form>
+			
+		
+		</section>
+		<aside class="container__sidebar">
+	
+	
+		
+		</aside>
+		</section>
+		<footer class="footer">
+		
+		
+		</footer>
+		
+		</div>
+	
+	
+	<script src="script.js"></script>
+	
+	
+</body>
+</html>

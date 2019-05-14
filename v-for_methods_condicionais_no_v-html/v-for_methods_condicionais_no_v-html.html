@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>   
+    <title>Vue</title>
+</head>
+<body>
+ 
+        <div id="app">
+
+            <!-- ########### LOOPANDO VÁRIAS VEZES OS PAÍSES COM V-FOR E UMA FUNCTION QUE RETORNA EM UM ARRAY ########### -->
+
+            <div v-for="pais in paises()">
+                <p v-html="pais.bandeira"></p>
+                <p v-html="pais.nome"></p>
+            </div>
+
+
+            <!-- ########### LOOPANDO VÁRIAS VEZES OS PAÍSES EM UMA DIV COM VÁRIAS CONFICIONAIS ########### -->
+
+            <!-- <div>
+
+                <span v-html="(
+                    pais == 'argentina' ? argentina :
+                    pais == 'brazil' ? brazil :
+                    pais == 'china' ? china :
+                    pais == 'uk' ? uk :
+                    pais == 'usa' ? usa : ''
+                )"></span>
+
+                <p v-html="(
+                    pais == 'argentina' ? 'Argentina' :
+                    pais == 'brazil' ? 'Brazil' :
+                    pais == 'china' ? 'China' :
+                    pais == 'uk' ? 'Inglaterra' :
+                    pais == 'usa' ? 'Estados Unidos' : ''
+                )"></p>
+
+            </div> -->
+
+            
+            <!-- ########### LOOPANDO VÁRIAS VEZES OS PAÍSES EM VÁRIAS DIVS ########### -->
+
+            <!-- <div v-if="pais == 'argentina'">
+                <span v-html="argentina"></span>
+                <p> Argentina </p>
+            </div>
+            
+            <div v-if="pais == 'brazil'">
+                <span v-html="brazil"></span>
+                <p> Brazil </p>
+            </div>
+
+            <div v-if="pais == 'china'">
+                <span v-html="china"></span>
+                <p> China </p>
+            </div>
+
+            <div v-if="pais == 'uk'">
+                <span v-html="uk"></span>
+                <p> Inglaterra </p>
+            </div>
+
+            <div v-if="pais == 'usa'">
+                <span v-html="usa"></span>
+                <p> Estados Unidos </p>
+            </div> -->
+            
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
