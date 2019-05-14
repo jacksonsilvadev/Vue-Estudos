@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Vue.js</title>
+	<meta charset="utf-8" />
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+	<div id="app">
+		<header class="header">
+
+
+
+		</header>
+		<section class="container">
+			<section class="container__content">
+
+				<!-- Normalmente o Vue identifica os eventos e ja renderiza novamente para o usuário,
+				o único que ele não renderiza é quando é alterado manualmente o nome de algum array
+					por exemplo
+					app.list[0] = 'Jackson Silva'
+
+				para alterar dessa forma e ser renderizado de novo é necessário chamar um evento do Vue e ele mesmo alterar
+
+				Vue.set{app.list[0] = 'Jackson Silva'}
+			-->
+				<div>
+					<p v-for="(item, index) in lista">
+						Item #{{index}} - {{item.name}}
+					</p>
+				</div>
+
+				<div>
+					<p v-for="(item, key ,index) in listas">
+						Item #{{index}} - {{key}} - {{item}}
+					</p>
+				</div>
+
+
+			</section>
+			<aside class="container__sidebar">
+
+
+
+			</aside>
+		</section>
+		<footer class="footer">
+
+
+		</footer>
+
+	</div>
+
+
+	<script src="script.js"></script>
+
+
+</body>
+
+</html>
