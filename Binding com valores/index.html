@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Vue.js</title>
+	<meta charset="utf-8" />
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+	<div id="app">
+		<header class="header">
+
+
+
+		</header>
+		<section class="container">
+			<section class="container__content">
+
+				<input type="checkbox" v-model="marcado" true-value="sim" false-value="nao">
+				<p>Marcado: {{marcado}}</p>
+
+				<hr>
+
+				<select v-model="selected">
+					<option id="teste" v-bind:value="{nome:'Jackson', idade: 19}">Jackson</option>
+					<option v-bind:value="{nome:'Lucas', idade: 23}">Lucas</option>
+					<option v-bind:value="{nome:'Lucão', idade: 23}">Lucão</option>
+				</select>
+				<p>Selecionado: {{selected}}</p>
+
+
+			</section>
+			<aside class=" container__sidebar">
+
+
+
+			</aside>
+		</section>
+		<footer class="footer">
+
+
+		</footer>
+
+	</div>
+
+
+	<script src="script.js"></script>
+
+
+</body>
+
+</html>
