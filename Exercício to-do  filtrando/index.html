@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Vue.js</title>
+	<meta charset="utf-8" />
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+	<div id="app">
+		<header class="header" id="header">
+
+			<to-do-adicionar @add="addTodo"></to-do-adicionar>
+
+
+		</header>
+		<section class="container">
+			<section class="container__content">
+
+			</section>
+			<aside class=" container__sidebar" id="sidebar">
+
+				<to-do-list v-bind:lista="lista"></to-do-list>
+
+			</aside>
+		</section>
+		<footer class="footer">
+
+
+		</footer>
+
+	</div>
+
+
+	<script type="text/javascript" src="script.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Vue.js</title>
+	<meta charset="utf-8" />
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+	<div id="app">
+
+		<div class="farol">
+			<luz v-bind:cor="red == false ? cor[3]:cor[0]"></luz>
+			<luz v-bind:cor="yellow ? cor[2]:cor[3]"></luz>
+			<luz v-bind:cor="green ? cor[1]:cor[3]"></luz>
+		</div>
+
+
+
+		<button v-if="showSinalChange" class="btn" @click="mudarSinal">{{sinal ? 'Fechar sinal':'Abrir sinal'}}</button>
+	</div>
+
+
+	<script type="text/javascript" src="script.js"></script>
+
+
+</body>
+
+</html>
