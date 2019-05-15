@@ -13,17 +13,18 @@
 	<div id="app">
 		<header class="header" id="header">
 
-			<to-do-adicionar @add="addTodo"></to-do-adicionar>
+
+			<search @filtra="listaFiltro"></search>
 
 
 		</header>
 		<section class="container">
 			<section class="container__content">
-
+				<list-to-do :lista="listaFiltro()"></list-to-do>
 			</section>
 			<aside class=" container__sidebar" id="sidebar">
 
-				<to-do-list v-bind:lista="lista"></to-do-list>
+
 
 			</aside>
 		</section>
