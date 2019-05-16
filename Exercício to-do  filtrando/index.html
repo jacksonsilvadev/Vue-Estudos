@@ -1,44 +1,27 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Vue.js</title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
 
-<head>
-	<title>Vue.js</title>
-	<meta charset="utf-8" />
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
-	<link rel="stylesheet" type="text/css" href="style.css" />
-</head>
+  <body>
+    <div id="app">
+      <header class="header" id="header">
+        <search @filtra="listaFiltro"></search>
+      </header>
+      <section class="container">
+        <section class="container__content">
+          <list-to-do :lista="listaFiltro()"></list-to-do>
+        </section>
+        <aside class=" container__sidebar" id="sidebar"></aside>
+      </section>
+      <footer class="footer"></footer>
+    </div>
 
-<body>
-	<div id="app">
-		<header class="header" id="header">
-
-
-			<search @filtra="listaFiltro"></search>
-
-
-		</header>
-		<section class="container">
-			<section class="container__content">
-				<list-to-do :lista="listaFiltro()"></list-to-do>
-			</section>
-			<aside class=" container__sidebar" id="sidebar">
-
-
-
-			</aside>
-		</section>
-		<footer class="footer">
-
-
-		</footer>
-
-	</div>
-
-
-	<script type="text/javascript" src="script.js"></script>
-
-
-</body>
-
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>
