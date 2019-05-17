@@ -4,8 +4,8 @@
     <p>Esse é um componente muito legal!</p>
     <hr>
     <div class="componentes">
-      <app-usuario-info user="user"/>
-      <app-usuario-editar user="user"/>
+      <app-usuario-info :user="profile"/>
+      <app-usuario-editar :user="profile"/>
     </div>
   </div>
 </template>
@@ -17,10 +17,10 @@ import AppUsuarioEditar from "./UsuarioEditar";
 export default {
   data() {
     return {
-      user: {
+      profile: {
         nome: "Jackson Silva Rodrigues",
         age: 19,
-        birthday: "13/08/1999"
+        birthday: "1999-08-13"
       }
     };
   },

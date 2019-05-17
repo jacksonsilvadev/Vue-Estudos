@@ -1,7 +1,9 @@
 <template>
   <div class="componente">
     <h2>As Informações de Usuário</h2>
-    <p v-for="(value,key,index) in user">Nome: {{value}}</p>
+    <p>Nome: {{ user.nome }}</p>
+    <p>Age: {{user.age}}</p>
+    <p>Birthday: {{user.birthday}}</p>
   </div>
 </template>
 
