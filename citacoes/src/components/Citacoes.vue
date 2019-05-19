@@ -6,9 +6,9 @@
         </span>
 
         <citacao>
-            <h1>{{citacoes[indice].autor}}</h1>
-            <p>{{citacoes[indice].texto}}</p>
-            <h6>{{citacoes[indice].fonte}}</h6>
+            <h1 slot="autor">{{citacoes[indice].autor}}</h1>
+            <p slot="texto">{{citacoes[indice].texto}}</p>
+            <h6 slot="fonte">{{citacoes[indice].fonte}}</h6>
         </citacao>
     </div>
 </template>
@@ -51,5 +51,9 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    h1 {
+        color: green
     }
 </style>
