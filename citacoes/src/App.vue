@@ -5,8 +5,11 @@
 			<button @click="component = 'Citacoes'"> Citações </button>
 			<button @click="component = 'Sobre'"> Sobre </button>
 		</span>
-
+		<!-- Serve para não resetar o componente quando trocar em si -->
+	<keep-alive>
 		<component :is="component"></component>
+	</keep-alive>
+		
 		<!-- <Citacoes />
 		<Sobre /> -->
 	</div>
