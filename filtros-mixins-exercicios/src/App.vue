@@ -3,11 +3,26 @@
 		<h1>Filtros & Mixins</h1>
 		<hr>
 		<!-- Passando pipe para chamar um filter -->
-		<p>{{ cpf | cpf | inverter}}</p>
+		<p>{{ cpfDoAluno | cpf | inverter}}</p>
+		<input name="" id="" class="btn btn-primary" type="text" :value="cpfDoAluno | cpf">
+
+		<hr>
+		<frutas></frutas>
+		<hr>
+		<div id="app">
+		<ul>
+            <li v-for="fruta in frutas">{{fruta}}</li>
+        </ul>
+        <input name="" id="" class="btn btn-primary" type="text" value="" v-model="fruta" @keyup.enter="add">
+	</div>
 	</div>
 </template>
 
 <script>
+
+import Frutas from './Frutas.vue'
+import frutasMixin from './FrutasMixin'
+
 export default {
 	filters: {
 		cpf(valor) {
@@ -18,10 +33,23 @@ export default {
 			return arr.join('')
 		}
 	},
+	mixins: [frutasMixin],
 		data() {
 			return {
-				cpf: '60070080090'
+				cpfDoAluno: '60070080090',
+				fruta: '',
+                frutas: ['banana','maça','laranja']
 			}
+		},
+		methods: {
+            add() {
+                this.frutas.push(this.fruta);
+                this.fruta = ''
+            }
+        },
+	
+	components: {
+		Frutas
 		}
 	}
 </script>
