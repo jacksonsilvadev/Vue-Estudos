@@ -30,6 +30,7 @@ export default {
 			arr.splice(3,0,'.')
 			arr.splice(7,0,'.')
 			arr.splice(11,0,'-')
+			// Retornando valor do CPF em máscara
 			return arr.join('')
 		}
 	},
