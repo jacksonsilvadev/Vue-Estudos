@@ -43,7 +43,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1s;
+  transition: opacity 2s;
 }
 
 /* Por padrão opacity ja é 1 */
@@ -52,5 +52,31 @@ export default {
 
 /* Por padrão opacity ja é 1 */
 .fade-leave {
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(40px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(40px);
+  }
+}
+
+.slide-enter-active {
+  animation: slide-in 2s ease;
+}
+
+.slide-leave-active {
+  animation: slide-out 2s ease;
 }
 </style>
