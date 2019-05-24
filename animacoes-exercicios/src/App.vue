@@ -12,7 +12,7 @@
       <b-alert variant="info" v-show="exibir" show>{{ msg }}</b-alert>
     </transition>-->
 
-    <transition
+    <!-- <transition
       enter-active-class="animated bounce"
       mode="out-in"
       leave-active-class="animated shake"
@@ -26,13 +26,39 @@
     <b-select v-model="tipoAnimação">
       <option value="fade">Fade</option>
       <option value="slide">Slide</option>
-    </b-select>
+    </b-select>-->
 
     <transition :name="tipoAnimação" appear>
       <b-alert variant="info" v-show="exibir" show>{{ msg }}</b-alert>
     </transition>
+    <hr>
+    <transition
+      enter-active-class="animated bounce"
+      mode="out-in"
+      leave-active-class="animated shake"
+    >
+      <b-alert variant="info" v-if="exibir" key="info" show>{{ msg }}</b-alert>
+      <b-alert variant="warning" key="warn" v-else show>{{ msg }}</b-alert>
+    </transition>
+
+    <hr>
+    <button @click="exibir2 = !exibir2">Mostrar</button>
+    <transition
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @after-enter="afterEnter"
+      @enter-cancelled="enterCancelled"
+      @before-leave="beforeLeave"
+      @leave="leave"
+      @after-leave="afterLeave"
+      @leave-cancelled="leaveCancelled"
+    >
+      <div v-if="exibir2" class="caixa"></div>
+    </transition>
   </div>
 </template>
+
+
 
 <script>
 export default {
@@ -40,8 +66,35 @@ export default {
     return {
       msg: "Uma mensagem de informação para o usuário",
       exibir: true,
+      exibir2: true,
       tipoAnimação: ""
     };
+  },
+  methods: {
+    beforeEnter(el) {
+      console.log("beforeEnter");
+    },
+    enter(el, done) {
+      console.log("enter");
+    },
+    afterEnter(el) {
+      console.log("afterEnter");
+    },
+    enterCancelled(el) {
+      console.log("enterCancelled");
+    },
+    beforeLeave(el) {
+      console.log("beforeLeave");
+    },
+    leave(el) {
+      console.log("leave");
+    },
+    afterLeave(el) {
+      console.log("afterLeave");
+    },
+    leaveCancelled(el) {
+      console.log("leaveCancelled");
+    }
   }
 };
 </script>
@@ -55,6 +108,13 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   font-size: 1.5rem;
+}
+
+.caixa {
+  height: 100px;
+  width: 300px;
+  margin: 30px auto;
+  background-color: lightgreen;
 }
 
 .fade-enter,
