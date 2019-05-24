@@ -4,12 +4,20 @@
     <hr>
     <b-button class="my-3" @click="exibir = !exibir" variant="primary">Mostrar mensagem</b-button>
 
-    <transition name="fade">
+    <transition name="fade" appear>
       <b-alert variant="info" v-if="exibir" show>{{ msg }}</b-alert>
     </transition>
 
+    <transition name="slide" type="animation" appear>
+      <b-alert variant="info" v-show="exibir" show>{{ msg }}</b-alert>
+    </transition>
+
+    <transition enter-active-class="animated bounce" leave-active-class="animated shake">
+      <b-alert variant="info" v-show="exibir" show>{{ msg }}</b-alert>
+    </transition>
+
     <transition name="slide">
-      <b-alert variant="info" v-if="exibir" show>{{ msg }}</b-alert>
+      <b-alert variant="info" v-show="exibir" show>{{ msg }}</b-alert>
     </transition>
   </div>
 </template>
@@ -19,7 +27,7 @@ export default {
   data() {
     return {
       msg: "Uma mensagem de informação para o usuário",
-      exibir: false
+      exibir: true
     };
   }
 };
@@ -74,9 +82,16 @@ export default {
 
 .slide-enter-active {
   animation: slide-in 2s ease;
+  transition: opacity 2s;
 }
 
 .slide-leave-active {
   animation: slide-out 2s ease;
+  transition: opacity 2s;
+}
+
+.slide-enter,
+.slide-leave-to {
+  opacity: 0;
 }
 </style>
