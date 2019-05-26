@@ -1,12 +1,45 @@
 <template>
 	<div id="app">
 		<h1>Super Quiz</h1>
+		<transition name="flip" mode="out-in">
+		<question v-if="questionMode" @answered="showResult" :question="questions[currentQuestion]"></question>
+
+		<result @confirmed="nextQuestion" v-else :result="result"></result>
+		</transition>
+	
 	</div>
 </template>
 
 <script>
-export default {
+import questions from './util/questions'
+import Question from './components/Question'
+import Result from './components/Result'
 
+
+export default {
+	components: {
+		Question, Result
+	},
+	data() {
+		return {
+			result: false,
+			questionMode: true,
+			questions,
+			currentQuestion: 0
+		}
+	},
+	methods: {
+		showResult(result) {
+			this.result = result
+			this.questionMode = false
+		},
+		nextQuestion() {
+			let r = Math.random() * this.questions.length
+			this.currentQuestion = parseInt(r)
+			console.log(r)
+			this.questionMode = true
+		}
+	}
 }
 </script>
 
