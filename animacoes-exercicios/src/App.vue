@@ -41,9 +41,9 @@
       <b-alert variant="warning" key="warn" v-else show>{{ msg }}</b-alert>
     </transition> -->
 
-    <hr>
+    <!-- <hr>
     <button @click="exibir2 = !exibir2">Mostrar</button>
-    <!-- :css desabilita o css dessa animação que vem por padrão -->
+     :css desabilita o css dessa animação que vem por padrão 
     <transition
     
       :css="false"
@@ -67,7 +67,16 @@
    
 <transition name="fade" mode="out-in">
   <component :is="componenteSelecionado"></component>
-</transition>
+</transition> -->
+
+
+<hr>
+    <b-button @click="adicionarAluno" class="mb-4" variant="primary">Adicionar Aluno</b-button>
+      <transition-group name="slide">
+      <b-list-group v-for="(aluno,i) in alunos" :key="aluno">
+        <b-list-group-item @click="removerAluno(i)">{{ aluno }}</b-list-group-item>
+      </b-list-group>
+    </transition-group>
   </div>
 </template>
 
@@ -84,6 +93,7 @@ export default {
   },
   data() {
     return {
+      alunos: ['Roberto', 'Julia', 'Teresa', 'Paulo'],
       msg: "Uma mensagem de informação para o usuário",
       exibir: true,
       exibir2: true,
@@ -93,6 +103,13 @@ export default {
     };
   },
   methods: {
+    adicionarAluno() {
+        const aluno = Math.random().toString(36).substring(2)
+        this.alunos.push(aluno)
+    },
+    removerAluno(indice) {
+      this.alunos.splice(indice, 1)
+    },
     animar(el, done, negativo) {
       let rodada = 1
       // Abrindo um temporizador para que ele aumente a cada nova rodada e quando a rodada for maior que 30 ele começa novamente a execução do 0
@@ -200,10 +217,15 @@ export default {
 .slide-leave-active {
   animation: slide-out 2s ease;
   transition: opacity 2s;
+  position: absolute;
+  width: 100%;
 }
 
 .slide-enter,
 .slide-leave-to {
   opacity: 0;
+}
+.slide-move {
+  transition: transform 1s;
 }
 </style>
