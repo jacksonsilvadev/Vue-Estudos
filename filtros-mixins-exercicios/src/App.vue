@@ -11,7 +11,7 @@
 		<hr>
 		<div id="app">
 		<ul>
-            <li v-for="fruta in frutas">{{fruta}}</li>
+            <li v-for="fruta in frutas" :key="fruta">{{fruta}}</li>
         </ul>
         <input name="" id="" class="btn btn-primary" type="text" value="" v-model="fruta" @keyup.enter="add">
 	</div>
