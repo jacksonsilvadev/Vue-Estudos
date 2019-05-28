@@ -5,8 +5,12 @@
         <a>Home</a>
       </router-link>
 
-      <router-link to="/usuario" tag="li" exact-active-class="active">
-        <a>Usuario</a>
+      <router-link to="/usuario/10" tag="li" exact-active-class="active">
+        <a>Usuario 1</a>
+      </router-link>
+
+      <router-link to="/usuario/20" tag="li" exact-active-class="active">
+        <a>Usuario 2</a>
       </router-link>
     </ul>
   </nav>
