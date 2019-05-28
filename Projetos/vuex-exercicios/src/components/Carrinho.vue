@@ -32,7 +32,7 @@
 export default {
   computed: {
     total() {
-      return this.$store.getters.valorTotal;
+      return this.$store.getters["carrinho/valorTotal"];
     },
     produtos() {
       return this.$store.state.carrinho.produtos;

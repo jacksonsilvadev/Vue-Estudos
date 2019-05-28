@@ -39,7 +39,7 @@ export default {
       this.sequencia++;
 
       //   this.$store.state.produtos.push(produto);
-      this.$store.dispatch("adicionarProduto", produto);
+      this.$store.dispatch("carrinho/adicionarProduto", produto);
     }
   }
 };
