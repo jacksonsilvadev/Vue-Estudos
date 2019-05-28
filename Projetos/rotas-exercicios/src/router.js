@@ -4,11 +4,13 @@ import Inicio from './components/Inicio.vue'
 import Usuario from './components/usuario/Usuario.vue'
 import UsuarioLista from './components/usuario/UsuarioLista.vue'
 import UsuarioDetalhe from './components/usuario/UsuarioDetalhe.vue'
-import UsuarioEditar from './components/usuario/UsuarioEditar.vue'
+// import UsuarioEditar from './components/usuario/UsuarioEditar.vue'
 
 Vue.use(Router);
 
-export default new Router({
+const UsuarioEditar = () => import('./components/usuario/UsuarioEditar')
+
+const router = new Router({
     mode: 'history',
     scrollBehavior(to) {
         if (to.hash) {
@@ -33,7 +35,11 @@ export default new Router({
                 {
                     path: ':id',
                     component: UsuarioDetalhe,
-                    props: true
+                    props: true,
+                    beforeEnter: (to, from, next) => {
+                        console.log('Antes da rota usuario detalhe')
+                        next()
+                    }
                 },
                 {
                     path: ':id/edit',
@@ -49,3 +55,12 @@ export default new Router({
         }
     ]
 })
+
+// Before enter rota global
+router.beforeEach((to, from, next) => {
+    console.log('Antes de entrar na rota')
+    // Next para chamar a rota to
+    next()
+})
+
+export default router
