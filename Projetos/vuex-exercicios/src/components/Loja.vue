@@ -33,7 +33,7 @@ export default {
       this.sequencia++;
 
       //   this.$store.state.produtos.push(produto);
-      this.$store.commit("adicionarProduto", produto);
+      this.$store.dispatch("adicionarProduto", produto);
     }
   }
 };
