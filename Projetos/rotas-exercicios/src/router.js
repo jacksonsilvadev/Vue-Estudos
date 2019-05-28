@@ -10,9 +10,17 @@ Vue.use(Router);
 
 export default new Router({
     mode: 'history',
+    scrollBehavior(to) {
+        if (to.hash) {
+            return {
+                selector: to.hash
+            }
+        }
+    },
     routes: [{
             path: '/',
-            component: Inicio
+            component: Inicio,
+            name: 'inicio'
         },
         {
             path: '/usuario',
@@ -30,7 +38,12 @@ export default new Router({
                 {
                     path: ':id/edit',
                     component: UsuarioEditar,
-                    props: true
+                    props: true,
+                    name: 'editarUsuario'
+                },
+                {
+                    path: '*',
+                    redirect: '/'
                 }
             ]
         }

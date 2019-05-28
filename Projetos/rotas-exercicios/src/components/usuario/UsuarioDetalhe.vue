@@ -6,8 +6,14 @@
       <strong>Código:</strong>
       {{id}}
     </p>
-
-    <router-link :to="`usuario/${id}/edit`" tag="button" primario>Editar</router-link>
+    <!-- :to="`usuario/${id}/edit`" -->
+    <router-link
+      :to="{name: 'editarUsuario', params: {id: id}, query: {
+        complete: true, lingua: 'pt'
+    }, hash:'#rodape'}"
+      tag="button"
+      primario
+    >Editar</router-link>
   </div>
 </template>
 

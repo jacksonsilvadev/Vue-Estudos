@@ -2,7 +2,13 @@
   <div id="app">
     <h1>Rotas com VueRouter</h1>
     <Menu></Menu>
-    <router-view></router-view>
+    <transition
+      enter-active-class="animated rubberBand"
+      leave-active-class="animated rollOut"
+      mode="out-in"
+    >
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
