@@ -14,12 +14,12 @@
     <v-toolbar-items>
       <v-btn @click="endDay" flat>Finalizar Dia</v-btn>
       <v-menu offset-y>
-        <v-btn flat slot="activator">Salver & Carregar</v-btn>
+        <v-btn flat slot="activator">Salvar & Carregar</v-btn>
         <v-list>
-          <v-list-tile>
+          <v-list-tile @click="saveData">
             <v-list-tile-title>Salvar Dados</v-list-tile-title>
           </v-list-tile>
-          <v-list-tile>
+          <v-list-tile @click="loadData">
             <v-list-tile-title>Carregar Dados</v-list-tile-title>
           </v-list-tile>
         </v-list>
@@ -42,6 +42,14 @@ export default {
     endDay() {
       // console.log("hi");
       return this.$store.dispatch("randomizeStocks");
+    },
+    saveData() {
+      // Pegando os getters que estão no store
+      const { funds, stockPortfolio, stocks } = this.$store.getters;
+      this.$http.put("data.json", { funds, stockPortfolio, stocks });
+    },
+    loadData() {
+      this.$store.dispatch("loadData");
     }
   }
 };
