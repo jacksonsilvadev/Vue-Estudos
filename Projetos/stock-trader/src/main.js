@@ -5,6 +5,10 @@ import router from './router'
 import store from './store/store'
 
 
+Vue.filter('currency', value => {
+	return 'R$ ' + value.toLocaleString()
+})
+
 Vue.config.productionTip = false
 
 new Vue({

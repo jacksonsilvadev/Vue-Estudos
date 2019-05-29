@@ -12,7 +12,7 @@
     <v-spacer></v-spacer>
 
     <v-toolbar-items>
-      <v-btn flat>Finalizar Dia</v-btn>
+      <v-btn @click="endDay" flat>Finalizar Dia</v-btn>
       <v-menu offset-y>
         <v-btn flat slot="activator">Salver & Carregar</v-btn>
         <v-list>
@@ -25,7 +25,7 @@
         </v-list>
       </v-menu>
       <v-layout align-center>
-        <span class="text-uppercase grey--text text--darken-2">Saldo: {{ funds }}</span>
+        <span class="text-uppercase grey--text text--darken-2">Saldo: {{ funds | currency }}</span>
       </v-layout>
     </v-toolbar-items>
   </v-toolbar>
@@ -36,6 +36,12 @@ export default {
   computed: {
     funds() {
       return this.$store.getters["funds"];
+    }
+  },
+  methods: {
+    endDay() {
+      // console.log("hi");
+      return this.$store.dispatch("randomizeStocks");
     }
   }
 };

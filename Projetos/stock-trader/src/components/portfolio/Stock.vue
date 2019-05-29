@@ -4,7 +4,7 @@
       <v-card-title class="headline">
         <strong>
           {{stock.name}}
-          <small>(Preço: {{ stock.price }} | Qtde: {{ stock.quantity}})</small>
+          <small>(Preço: {{ stock.price | currency}} | Qtde: {{ stock.quantity}})</small>
         </strong>
       </v-card-title>
     </v-card>
@@ -46,8 +46,7 @@ export default {
         stockPrice: this.stock.price,
         quantity: this.quantity
       };
-      // eslint-disable-next-line
-      console.log(order);
+      // console.log(order);
       this.$store.dispatch("sellStock", order);
       this.quantity = 0;
     }
