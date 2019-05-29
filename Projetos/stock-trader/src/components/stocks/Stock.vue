@@ -13,7 +13,7 @@
         <v-text-field v-model.number="quantity" label="Quantidade" type="number"></v-text-field>
         <v-btn
           class="green darken-3 white--text"
-          :disabled="quantity <= 0 || !Number.isInterger(quantity)"
+          :disabled="quantity <= 0 || !Number.isInteger(quantity)"
           @click="buyStock"
         >Comprar</v-btn>
       </v-container>
