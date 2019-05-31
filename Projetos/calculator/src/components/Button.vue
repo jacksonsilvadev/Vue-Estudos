@@ -1,11 +1,12 @@
 <template>
-    <button class="button" @click="$emit('onCalcButtonClick', label)" :class="{ double ,triple ,operation }">
+    <button class="button" @click="$emit('onCalcButtonClick', label )" :class="{ double ,triple ,operation }">
         {{ label }}
     </button>
 </template>
 
 <script>
 export default {
+    
     props: {
         label: {},
         operation: {
