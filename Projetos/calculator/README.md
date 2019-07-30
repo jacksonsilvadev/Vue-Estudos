@@ -1,29 +1,17 @@
-# calculator
+# Calculadora MAC com VueJs
 
-## Project setup
-```
-npm install
-```
+#### Projeto feito com VueJS, hospedado na heroku com nodeJS.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+###[Demo](https://calculadora-mac.herokuapp.com/ "Demo")
 
-### Compiles and minifies for production
+- Start do projeto
+
 ```
-npm run build
+npm i --save
 ```
 
-### Run your tests
-```
-npm run test
-```
+####&
 
-### Lints and fixes files
 ```
-npm run lint
+npm run start
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
